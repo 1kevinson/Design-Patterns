@@ -1,9 +1,9 @@
 package org.dp.arsene.strategy;
 
-public class Mandarin extends Duck {
+public class PlasticDuck extends Duck{
 
     @Override
     public void show() {
-        // Show Mandarin
+        // Show Plastic Duck
     }
 }

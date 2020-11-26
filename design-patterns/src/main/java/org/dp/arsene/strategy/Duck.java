@@ -1,6 +1,6 @@
 package org.dp.arsene.strategy;
 
-abstract class Duck {
+public abstract class Duck {
 
     protected void quack() {
     }

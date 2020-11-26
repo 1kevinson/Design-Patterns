@@ -3,7 +3,7 @@ package org.dp.arsene.strategy;
 public class Colvert extends Duck {
 
     @Override
-    protected void show() {
+    public void show() {
         // Show Colvert
     }
 }

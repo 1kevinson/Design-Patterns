@@ -18,4 +18,12 @@ public abstract class Duck {
     }
 
     abstract public void show();
+
+    public void setFlySkill(FlySkill flySkill) {
+        this.flySkill = flySkill;
+    }
+
+    public void setQuackSkill(QuackSkill quackSkill) {
+        this.quackSkill = quackSkill;
+    }
 }

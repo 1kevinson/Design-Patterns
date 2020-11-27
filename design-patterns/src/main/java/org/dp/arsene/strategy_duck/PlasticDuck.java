@@ -2,13 +2,13 @@ package org.dp.arsene.strategy_duck;
 
 public class PlasticDuck extends Duck{
 
-    @Override
-    public void quack() {
-       // Not Quack, but Gossip
+    public PlasticDuck() {
+        flySkill = new NotFlying();
+        quackSkill = new QuackQuack();
     }
 
     @Override
     public void show() {
-        // Show Plastic Duck
+        System.out.println("I am a false duck (in plastic).");
     }
 }

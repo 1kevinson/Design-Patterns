@@ -5,17 +5,17 @@ public abstract class Duck {
     protected FlySkill flySkill;
     protected QuackSkill quackSkill;
 
-    protected void doFly(){
+    public void doFly(){
         flySkill.fly();
     }
 
-    protected void doQuack(){
+    public void doQuack(){
         quackSkill.quack();
     }
 
-    protected void swim() {
+    public void swim() {
         System.out.println("I'm a duck so i can swim");
     }
 
-    abstract protected void show();
+    abstract public void show();
 }

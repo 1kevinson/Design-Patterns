@@ -1,4 +1,4 @@
-package org.dp.arsene.strategy;
+package org.dp.arsene.strategy_duck;
 
 public class PlasticDuck extends Duck{
 

@@ -12,7 +12,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("/////////  SHOPPING STRATEGY  //////");
+        System.out.println("//  SHOPPING STRATEGY  //\n");
 
         final var items = new ArrayList<>(List.of(
                 new Item("DEG44515EE4", "AirPods Pro", "wireless earphones by apple", 270),
@@ -25,6 +25,6 @@ public class App {
         cart.addItem(new Item("DS9985SAZZ", "Magic KeyBoard", "keyboard apple", 130));
         cart.pay(new PaypalStrategy("kakarot@hippy.fr", "$dif4787984/d4f"));
 
-        System.out.print("/////////  END  //////");
+        System.out.print("\n/  END  /");
     }
 }

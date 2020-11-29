@@ -75,6 +75,7 @@ class GoodFilter implements Filter<Product> {
     }
 }
 
+// If not use composite, set specialisation classes in one file
 class ColorSpecification implements Specification<Product> {
 
     private final Color color;

@@ -6,10 +6,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Strategy Pattern exemple for Duck
- */
+
 public class App {
+
     public static void main(String[] args) {
 
         System.out.println("//  SHOPPING STRATEGY  //\n");
@@ -25,6 +24,9 @@ public class App {
         cart.addItem(new Item("DS9985SAZZ", "Magic KeyBoard", "keyboard apple", 130));
         cart.pay(new PaypalStrategy("kakarot@hippy.fr", "$dif4787984/d4f"));
 
-        System.out.print("\n/  END  /");
+
+        System.out.print("\n/  Generics  /");
+        List<String> l ;
+
     }
 }

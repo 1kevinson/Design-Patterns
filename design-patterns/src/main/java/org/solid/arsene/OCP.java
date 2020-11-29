@@ -34,7 +34,10 @@ class Product {
     }
 }
 
-
+/**
+ * Work But bad practice
+ */
+// Bad practice because it's not close for modifications
 class ProductFilter {
     public Stream<Product> filterByColor(List<Product> products, Color color) {
         return products.stream().filter(product -> product.getColor() == color);
@@ -49,6 +52,9 @@ class ProductFilter {
     }
 }
 
+
+// -------------------
+
 interface Specification<T> {
     boolean isSatisfied(T item);
 }
@@ -57,6 +63,10 @@ interface Filter<T> {
     Stream<T> filter(List<T> items, Specification<T> specification);
 }
 
+/**
+ * Good way to respect open/close principle,
+ * This class is open for extension but close for modification
+ */
 class GoodFilter implements Filter<Product> {
 
     @Override
@@ -74,8 +84,8 @@ class ColorSpecification implements Specification<Product> {
     }
 
     @Override
-    public boolean isSatisfied(Product item) {
-        return item.getColor() == this.color;
+    public boolean isSatisfied(Product product) {
+        return product.getColor() == this.color;
     }
 }
 
@@ -88,16 +98,30 @@ class SizeSpecification implements Specification<Product> {
     }
 
     @Override
-    public boolean isSatisfied(Product item) {
-        return item.getSize() == this.size;
+    public boolean isSatisfied(Product product) {
+        return product.getSize() == this.size;
     }
 }
 
-class AndSpecification<T> implements Specification<T> {
+class NameSpecification implements Specification<Product> {
+
+    private final String character;
+
+    NameSpecification(String character) {
+        this.character = character;
+    }
+
+    @Override
+    public boolean isSatisfied(Product product) {
+        return product.getName().contains(this.character);
+    }
+}
+
+class And2Specification<T> implements Specification<T> {
 
     private final Specification<T> first, second;
 
-    AndSpecification(Specification<T> first, Specification<T> second) {
+    And2Specification(Specification<T> first, Specification<T> second) {
         this.first = first;
         this.second = second;
     }
@@ -105,6 +129,22 @@ class AndSpecification<T> implements Specification<T> {
     @Override
     public boolean isSatisfied(T item) {
         return first.isSatisfied(item) && second.isSatisfied(item);
+    }
+}
+
+class And3Specifications<T> implements Specification<T> {
+
+    private final Specification<T> first, second, third;
+
+    And3Specifications(Specification<T> first, Specification<T> second, Specification<T> third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
+    }
+
+    @Override
+    public boolean isSatisfied(T item) {
+        return first.isSatisfied(item) && second.isSatisfied(item) && third.isSatisfied(item);
     }
 }
 
@@ -119,12 +159,14 @@ public class OCP {
 
         final var productFiler = new ProductFilter();
 
+        // BAD WAY OCP
         System.out.println("\nGreen Products (old) :");
         productFiler.filterByColor(products, Color.GREEN)
                 .forEach(product -> System.out.println(
                         " - " + product.getName() + " is " + Color.GREEN
                 ));
 
+        // GOOD WAY OCP
         final var betterFilter = new GoodFilter();
 
         System.out.println("\nGreen Products (new) :");
@@ -134,9 +176,18 @@ public class OCP {
                 ));
 
         System.out.println("\nGreen Products (new) => LARGE BLUE ITEMS:");
-        betterFilter.filter(products, new AndSpecification<>(
+        betterFilter.filter(products, new And2Specification<>(
                 new ColorSpecification(Color.BLUE),
                 new SizeSpecification(Size.LARGE)
+        )).forEach(product -> System.out.println(
+                " - " + product.getName() + " is " + Color.BLUE + " and size is " + Size.LARGE
+        ));
+
+        System.out.println("\nGreen Products (new) => House LARGE BLUE ITEMS:");
+        betterFilter.filter(products, new And3Specifications<>(
+                new ColorSpecification(Color.BLUE),
+                new SizeSpecification(Size.LARGE),
+                new NameSpecification("h")
         )).forEach(product -> System.out.println(
                 " - " + product.getName() + " is " + Color.BLUE + " and size is " + Size.LARGE
         ));

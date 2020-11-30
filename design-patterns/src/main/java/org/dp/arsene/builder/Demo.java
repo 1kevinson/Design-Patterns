@@ -9,8 +9,9 @@ class Demo {
 
     public static void main(String[] args) {
         HtmlBuilder builder = new HtmlBuilder("ul");
-        builder.addChild("li", "hello");
-        builder.addChild("li", "world");
+        builder
+            .addChild("li", "hello")
+            .addChild("li", "world");
         System.out.println(builder);
     }
 }
@@ -30,9 +31,10 @@ class Builder {
             root.name = rootName;
         }
 
-        public void addChild(String childName, String childText) {
+        public HtmlBuilder addChild(String childName, String childText) {
             HtmlElement element = new HtmlElement(childName, childText);
             root.elements.add(element);
+            return this;
         }
 
         public void clear() {

@@ -5,7 +5,7 @@ import org.dp.arsene.builder.Builder.HtmlBuilder;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Demo {
+class Html {
 
     public static void main(String[] args) {
         HtmlBuilder builder = new HtmlBuilder("ul");

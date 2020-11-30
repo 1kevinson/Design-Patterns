@@ -13,6 +13,7 @@ public class Person {
     }
 }
 
+// Fluent builder using Generics
 class PersonBuilder<SELF extends PersonBuilder<SELF>> {
     protected Person person = new Person();
 

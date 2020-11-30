@@ -32,6 +32,7 @@ class PersonBuilder<SELF extends PersonBuilder<SELF>> {
 }
 
 class EmployeeBuilder extends PersonBuilder<EmployeeBuilder> {
+
     public EmployeeBuilder worksAt(String position) {
         person.position = position;
         return self();

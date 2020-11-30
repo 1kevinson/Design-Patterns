@@ -9,6 +9,7 @@ class Demo {
 
     public static void main(String[] args) {
         HtmlBuilder builder = new HtmlBuilder("ul");
+        // FLUENT BUILDER IN ACTION
         builder
             .addChild("li", "hello")
             .addChild("li", "world");
@@ -34,6 +35,7 @@ class Builder {
         public HtmlBuilder addChild(String childName, String childText) {
             HtmlElement element = new HtmlElement(childName, childText);
             root.elements.add(element);
+            // Introduce FLUENT BUILDER as return the reference to Current Object
             return this;
         }
 

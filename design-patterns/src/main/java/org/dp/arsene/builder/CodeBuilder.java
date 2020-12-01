@@ -27,7 +27,8 @@ public class CodeBuilder {
         final int indentSize = 2;
         final var newLine = System.lineSeparator();
         final var i = String.join("", Collections.nCopies(indentSize, " "));
-        final var classRef = "public class";
+        final String classRef = "public class";
+        final String delimiter = ";";
 
         final StringBuilder stringBuilder = new StringBuilder();
 
@@ -35,7 +36,7 @@ public class CodeBuilder {
         stringBuilder.append(String.format("{%s", newLine));
 
         for (Map.Entry<String, String> entry : fields.entrySet()) {
-            stringBuilder.append(String.format("%s%s %s %s%s", i, "public", entry.getValue(), entry.getKey(), newLine));
+            stringBuilder.append(String.format("%s%s %s %s%s%s", i, "public", entry.getValue(), entry.getKey(), delimiter, newLine));
         }
 
         stringBuilder.append(String.format("}%s", newLine));

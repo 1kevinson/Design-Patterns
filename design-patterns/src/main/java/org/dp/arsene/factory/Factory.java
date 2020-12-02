@@ -25,8 +25,8 @@ class Point {
         return new Point(x, y);
     }
 
-    public static Point newPolarPoint(double x, double y) {
-        return new Point(x * Math.cos(y), y * Math.sin(y));
+    public static Point newPolarPoint(double rho, double theta) {
+        return new Point(rho * Math.cos(theta), theta * Math.sin(theta));
     }
 
     @Override

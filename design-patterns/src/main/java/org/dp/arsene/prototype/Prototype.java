@@ -1,50 +1,63 @@
 package org.dp.arsene.prototype;
 
-import java.util.Arrays;
-
 public class Prototype {
 
     public static void main(String[] args) {
-        final var john = new Person(
-                new String[]{"John", "Smith"},
-                new Address("London road", 123)
-        );
+        Employee john = new Employee("John", new Address("123 London Road","London", "Unietd Kingdom"));
+
+        Employee chris = new Employee(john);
+        chris.name = "Chris";
+
+        System.out.println(john);
+        System.out.println(chris);
     }
 }
 
 
-class Address implements Cloneable {
-    public final String streetName;
-    public final int houseNumber;
+class Address {
 
-    public Address(String streetName, int houseNumber) {
-        this.streetName = streetName;
-        this.houseNumber = houseNumber;
+    private final String streetAddress, city, country;
+
+    public Address(String streetAddress, String city, String country) {
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.country = country;
+    }
+
+    // Copy constructor
+    public Address(Address otherAddress) {
+        // "this" refer to the 1rst constructor
+        this(otherAddress.streetAddress, otherAddress.city, otherAddress.country);
     }
 
     @Override
     public String toString() {
         return "Address{" +
-                "streetName='" + streetName + '\'' +
-                ", houseNumber=" + houseNumber +
+                "streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 }
 
+class Employee {
 
-class Person {
-    public final String[] names;
-    public final Address address;
+    public  String name;
+    public  Address address;
 
-    public Person(String[] names, Address address) {
-        this.names = names;
+    public Employee(String name, Address address) {
+        this.name = name;
         this.address = address;
+    }
+
+    public Employee(Employee otherEmployee) {
+        this(otherEmployee.name, new Address(otherEmployee.address));
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "names=" + Arrays.toString(names) +
+        return "Employee{" +
+                "name='" + name + '\'' +
                 ", address=" + address +
                 '}';
     }

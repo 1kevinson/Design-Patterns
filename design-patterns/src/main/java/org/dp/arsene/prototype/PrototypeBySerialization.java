@@ -4,6 +4,10 @@ import org.apache.commons.lang3.SerializationUtils;
 
 import java.io.Serializable;
 
+
+/**
+ * More convenient way is to copy through serialization
+ * */
 public class PrototypeBySerialization {
 
     public static void main(String[] args) {

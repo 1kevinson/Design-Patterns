@@ -1,5 +1,9 @@
 package org.dp.arsene.prototype;
 
+
+/**
+* Prefer use copy constructor than cloneable interface
+* */
 public class Prototype {
 
     public static void main(String[] args) {

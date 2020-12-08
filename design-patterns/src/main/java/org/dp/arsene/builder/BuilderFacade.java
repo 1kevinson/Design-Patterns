@@ -1,6 +1,6 @@
 package org.dp.arsene.builder;
 
-public class User {
+class User {
     // address
     public String streetAddress, postCode, city;
 
@@ -84,7 +84,7 @@ class UserJobBuilder extends UserBuilder {
     }
 }
 
-class Demo {
+public class BuilderFacade {
 
     public static void main(String[] args) {
         final var userBuilder = new UserBuilder();

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CodeBuilder {
+class CodeBuilder {
 
     public String className;
     public Map<String, String> fields = new HashMap<>();
@@ -47,7 +47,7 @@ public class CodeBuilder {
 }
 
 
-class DemoCodeBuilder {
+public class DemoCodeBuilder {
 
     public static void main(String[] args) {
         final CodeBuilder builder = new CodeBuilder("Person");

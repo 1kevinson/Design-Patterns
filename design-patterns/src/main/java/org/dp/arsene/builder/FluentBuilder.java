@@ -1,6 +1,6 @@
 package org.dp.arsene.builder;
 
-public class Person {
+class Person {
     public String name;
     public String position;
 
@@ -45,7 +45,7 @@ class EmployeeBuilder extends PersonBuilder<EmployeeBuilder> {
     }
 }
 
-class DemoPerson {
+public class FluentBuilder {
 
     public static void main(String[] args) {
         EmployeeBuilder builder = new EmployeeBuilder();

@@ -19,6 +19,7 @@ abstract class Company {
     }
 }
 
+// Class inheritance
 class GameDevCompany extends Company {
 
     @Override
@@ -35,6 +36,7 @@ class OutSourcingCompany extends Company {
     }
 }
 
+// Interface implementations
 interface Employee {
     void doWork();
 }

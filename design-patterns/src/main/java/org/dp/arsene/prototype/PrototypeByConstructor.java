@@ -4,13 +4,12 @@ package org.dp.arsene.prototype;
 /**
 * Prefer use copy constructor than cloneable interface
 * */
-public class Prototype {
+public class PrototypeByConstructor {
 
     public static void main(String[] args) {
         Employee john = new Employee("John", new Address("123 London Road","London", "Unietd Kingdom"));
 
-        Employee chris = new Employee(john);
-        chris.name = "Chris";
+        Employee chris = new Employee("Chris", john.address);
 
         System.out.println(john);
         System.out.println(chris);

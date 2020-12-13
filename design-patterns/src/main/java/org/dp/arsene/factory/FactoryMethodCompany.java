@@ -6,7 +6,7 @@ import java.util.Arrays;
 * Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 * */
 
-public class FactoryMethod {
+public class FactoryMethodCompany {
 
     public static void main(String[] args) {
         final Company company = new GameDevCompany();

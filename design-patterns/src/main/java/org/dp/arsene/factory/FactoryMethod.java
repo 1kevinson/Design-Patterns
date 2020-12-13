@@ -2,6 +2,10 @@ package org.dp.arsene.factory;
 
 import java.util.Arrays;
 
+/**
+* Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+* */
+
 public class FactoryMethod {
 
     public static void main(String[] args) {
@@ -12,6 +16,7 @@ public class FactoryMethod {
 
 abstract class Company {
 
+    // Interface for creating objects in this super class
     abstract Employee[] getEmployees();
 
     public String createSoftware() {

@@ -19,7 +19,7 @@ abstract class Company {
     }
 }
 
-// Class inheritance
+// High level Classes
 class GameDevCompany extends Company {
 
     @Override
@@ -36,11 +36,12 @@ class OutSourcingCompany extends Company {
     }
 }
 
-// Interface implementations
+// Abstractions
 interface Employee {
     void doWork();
 }
 
+// Low level Classes
 class Designer implements Employee {
 
     @Override

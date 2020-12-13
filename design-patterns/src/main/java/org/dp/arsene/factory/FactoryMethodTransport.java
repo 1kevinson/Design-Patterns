@@ -7,7 +7,8 @@ package org.dp.arsene.factory;
 public class FactoryMethodTransport {
 
     public static void main(String[] args) {
-        final LogisticApp logistic = new RoadLogistic();
+        final LogisticApp roadLogistic = new RoadLogistic();
+        roadLogistic.doLogisticStuff();
     }
 }
 
@@ -29,19 +30,29 @@ class Road implements Transport {
     }
 }
 
+// Creator
 abstract class LogisticApp {
-    public final void doSomeLogisticStuff() {
-        // Logistic stuff
+
+    // Subclasses can indirectly change that business logic by overriding the factory method and returning a different type of product from it.
+    public void doLogisticStuff() {
+
     }
 
     public abstract Transport getTransportType();
 }
 
+// Concrete Creators
 class RoadLogistic extends LogisticApp {
 
     @Override
     public Transport getTransportType() {
         return new Road();
+    }
+
+    @Override
+    public void doLogisticStuff() {
+      Transport transportType = getTransportType();
+      transportType.doDelivery();
     }
 }
 

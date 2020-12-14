@@ -24,6 +24,8 @@ public class PrototypeBySerialization {
 
 
 class Foo implements Serializable {
+  
+    private static final long serialVersionUID = 1L;
     public String oneThing, another;
 
     public Foo(String oneThing, String another) {

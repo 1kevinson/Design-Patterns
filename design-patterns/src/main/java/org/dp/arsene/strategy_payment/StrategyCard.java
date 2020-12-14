@@ -137,6 +137,6 @@ public class StrategyCard {
 
         final ShoppingCart cart = new ShoppingCart(cartItems);
 
-        cart.pay(new CreditCardStrategy("Boursorama","2245 2558 6965 1458","854",LocalDate.of(2022,5,14)));
+        cart.pay(new CreditCardStrategy("Revolut","2245 2558 6965 1458","854",LocalDate.of(2022,5,14)));
     }
 }

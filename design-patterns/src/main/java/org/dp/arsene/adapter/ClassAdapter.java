@@ -21,13 +21,11 @@ public class ClassAdapter {
         SquarePegAdapter smallSqPegAdapter = new SquarePegAdapter(smallSquarePeg);
         SquarePegAdapter bigSqPegAdapter = new SquarePegAdapter(bigSquarePeg);
 
-        if (isPegFitsHole(hole, smallSqPegAdapter)) {
+        if (isPegFitsHole(hole, smallSqPegAdapter))
             System.out.println("Square peg w3 fits round hole r10.");
-        }
 
-        if (!isPegFitsHole(hole, bigSqPegAdapter)) {
+        if (!isPegFitsHole(hole, bigSqPegAdapter))
             System.out.println("Square peg w15 does not fit into round hole r10.");
-        }
     }
 
     private static boolean isPegFitsHole(RoundHole hole, RoundPeg roundPeg) {

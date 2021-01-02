@@ -71,11 +71,11 @@ interface Device {
 
    int getVolume();
 
-   int setVolume(int percentage);
+   void setVolume(int percentage);
 
    int getChannel();
 
-   int setChannel(int channelNumber);
+   void setChannel(int channelNumber);
 }
 
 
@@ -102,8 +102,7 @@ class Radio implements Device{
     }
 
     @Override
-    public int setVolume(int percentage) {
-        return 0;
+    public void setVolume(int percentage) {
     }
 
     @Override
@@ -112,8 +111,7 @@ class Radio implements Device{
     }
 
     @Override
-    public int setChannel(int channelNumber) {
-        return 0;
+    public void setChannel(int channelNumber) {
     }
 }
 
@@ -139,8 +137,7 @@ class Television implements Device{
     }
 
     @Override
-    public int setVolume(int percentage) {
-        return 0;
+    public void setVolume(int percentage) {
     }
 
     @Override
@@ -149,7 +146,6 @@ class Television implements Device{
     }
 
     @Override
-    public int setChannel(int channelNumber) {
-        return 0;
+    public void setChannel(int channelNumber) {
     }
 }

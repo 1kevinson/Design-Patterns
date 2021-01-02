@@ -7,7 +7,7 @@ package org.dp.arsene.prototype;
 public class PrototypeByConstructor {
 
     public static void main(String[] args) {
-        Employee john = new Employee("John", new Address("123 London Road","London", "Unietd Kingdom"));
+        Employee john = new Employee("John", new Address("123 London Road","London", "United Kingdom"));
 
         Employee chris = new Employee("Chris", john.address);
 

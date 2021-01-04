@@ -4,7 +4,7 @@ package org.dp.arsene.adapter;
  * Also know as Wrapper
  * example >> Adapting square Pegs to round holes
  */
-public class ClassAdapter {
+public class Adapter {
 
     public static void main(String[] args) {
 

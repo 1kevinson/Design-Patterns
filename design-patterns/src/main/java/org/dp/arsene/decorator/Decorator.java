@@ -6,7 +6,7 @@ public class Decorator {
         final var salaryRecords = "SalaryRecords";
 
         // FileDataSource
-        final var fileSource = new FileDataSource("somefile.dat");
+        final var fileSource = new FileDataSource("someFile.dat");
         fileSource.writeData(salaryRecords);
 
         // Compression > FileDataSource

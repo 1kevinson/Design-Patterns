@@ -26,7 +26,7 @@ interface DataSource {
     void readData();
 }
 
-class FileDataSource implements  DataSource{
+class FileDataSource implements DataSource {
 
     private final String fileName;
 

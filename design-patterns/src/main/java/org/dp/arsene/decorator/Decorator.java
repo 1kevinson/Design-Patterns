@@ -2,6 +2,22 @@ package org.dp.arsene.decorator;
 
 public class Decorator {
 
+    public static void main(String[] args) {
+        final var salaryRecords = "SalaryRecords";
+
+        // FileDataSource
+        final var fileSource = new FileDataSource("somefile.dat");
+        fileSource.writeData(salaryRecords);
+
+        // Compression > FileDataSource
+        final var compressedSource = new CompressionDecorator(fileSource);
+        compressedSource.writeData(salaryRecords);
+
+        // Encryption > Compression > FileDataSource
+        final var encryptionSource = new EncryptionDecorator(compressedSource);
+        encryptionSource.writeData(salaryRecords);
+
+    }
 }
 
 interface DataSource {

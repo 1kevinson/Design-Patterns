@@ -3,7 +3,7 @@ package org.dp.arsene.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class compositeGraphic {
+public class CompositeGraphic {
     private List<Graphic> allGraphics;
 
     void load() {
